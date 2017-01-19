@@ -3,9 +3,48 @@ package com.test.quiz3;
 
 public class AnimalExam {
 	public static void main(String args[]){
-		Animal tiger = new Animal();
+/*		Animal tiger1 = new Animal();
+		tiger1.strength = tiger1.weight = 310; tiger1.skin=1; 
+		tiger1.speed=65; tiger1.life=26; tiger1.age=2;
+		*/
+		Lion lion1 = new Lion(2);
+		
+		//tiger1.smoking();
+		lion1.smoking();
+		
+		Animal lion2 = lion1;
+		//lion2.smoking();
+		Lion lion3 = (Lion) lion2;
+		lion3.smoking();
+		
+//		System.out.println((tiger1 instanceof Animal));
+//		System.out.println((tiger1 instanceof Lion));
+		System.out.println((lion1 instanceof Animal));
+		System.out.println((lion1 instanceof Lion));
+		System.out.println((lion2 instanceof Animal));
+		System.out.println((lion2 instanceof Lion));
+		
+		/*System.out.println(tiger1.attack(lion1));
+		System.out.println(lion1.strength);
+		System.out.println(lion1.attack(tiger1));
+		System.out.println(tiger1.strength);
+		System.out.println("----------------------------------");
+		
+		System.out.println(tiger1.attack(lion1));
+		System.out.println(lion1.strength);
+		System.out.println(lion1.attack(tiger1));
+		System.out.println(tiger1.strength);
+		System.out.println("----------------------------------");*/
+		
+		
+		
+		
+		
+		
+		
+/*		Animal tiger = new Animal();
 		Animal cow = new Animal();
-		tiger.feed = 1; cow.feed = 2;
+//		tiger.feed = 1; cow.feed = 2;
 		System.out.println(tiger.eat(cow));
 		System.out.println(cow.eat(tiger));
 		Plant carrot = new Plant();
@@ -27,7 +66,7 @@ public class AnimalExam {
 		System.out.println(bear.strength);
 		System.out.println(bear.attack(tiger));
 		System.out.println(tiger.strength);
-		
+		*/
 		
 	}
 		

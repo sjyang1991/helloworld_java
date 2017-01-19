@@ -1,6 +1,6 @@
 package com.test.quiz3;
 
-public class Animal{
+public class Animal /*extends Object 가 생략되어 있다*/{
 	//필드
 	int length;	//몸 길이
 	int weight;//무게
@@ -11,19 +11,23 @@ public class Animal{
 	int legs;//다리 수
 	int wings;//날개쌍
 	int feed;//먹이(1=동물, 2=식물, 3=잡식)
-	int breathe;//숨쉬는 방법
-	int habitat;//사는 곳
+	int breathe;//숨쉬는 방법 (1=허파, 2=아가미)
+	//int habitat;//사는 곳 (1=육지, 2=바다, 3=둘다)
 	int horns;//뿔개수
 	int strength;//체력
 	boolean alive;//생존
 	
 	//생성자
 	public Animal() {
-		length =0; weight=0; speed=0; life=0; skin=0; legs=0; wings=0; feed=0; breathe=0; habitat=0; horns=0; alive=true; /*strength=weight;*/
+		length =0; weight=0; speed=0; 
+		life=0; skin=0; legs=0; wings=0; 
+		feed=0; breathe=0; /*habitat=0;*/ horns=0; 
+		alive=true; /*strength=weight;*/
 	}
 	
 	//메소드
-	boolean eat(Animal feed){
+
+	/*boolean eat(Animal feed){
 		if(this.feed ==1 || this.feed ==3){
 			if (this.alive == true) {
 				int satiety = feed.weight /10;
@@ -75,7 +79,7 @@ public class Animal{
 		}
 		return false;
 	}
-	
+	*/
 	
 	
 	
