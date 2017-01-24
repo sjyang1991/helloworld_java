@@ -1,6 +1,41 @@
 package com.test.quiz3;
 
-public class Animal /*extends Object 가 생략되어 있다*/{
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
+public class Animal implements Serializable/*extends Object 가 생략되어 있다*/{
+	public static void save(Animal animal, String filename){
+		try{
+			FileOutputStream fos = new FileOutputStream(filename);
+			ObjectOutputStream oos = new ObjectOutputStream(fos);
+			oos.writeObject(animal);
+			
+			oos.flush();
+			oos.close();
+			fos.close();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		
+		
+	}
+	public static Animal load(String filename){
+		Animal animal = null;
+		try{
+			FileInputStream fis = new FileInputStream(filename);
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			animal = (Animal)ois.readObject();
+			ois.close();
+			fis.close();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+		return animal;
+	}
+	
 	//필드
 	int length;	//몸 길이
 	int weight;//무게

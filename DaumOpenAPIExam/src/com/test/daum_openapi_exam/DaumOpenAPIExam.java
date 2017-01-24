@@ -13,7 +13,7 @@ import org.json.simple.parser.JSONParser;
 
 public class DaumOpenAPIExam {
 	public static void main(String[] args) {
-		String keyword = "신학기가방";
+		String keyword = "라이언";
 		try{
 			keyword = URLEncoder.encode(keyword, "utf-8");
 		}catch(UnsupportedEncodingException e1){

@@ -1,7 +1,8 @@
 package com.test.quiz3;
 
 public class Lion extends Animal //lion은 동물이다
-	implements Eatable, Attackable, GroundHabitable{ //lion은 먹을 수 있고 공격할 수 있다.
+	implements Eatable, Attackable, GroundHabitable	//lion은 먹을 수 있고 공격할 수 있다.
+	{ 
 	
 	//생성자
 	@Override
@@ -18,6 +19,7 @@ public class Lion extends Animal //lion은 동물이다
 		a.eat(a);*/
 		
 	}
+	
 	@Override
 	public boolean eat(Animal feed){
 		if (this.alive == true) {
