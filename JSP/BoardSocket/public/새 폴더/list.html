@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title>게시판 전체 목록</title>
+	<script type="text/javascript"
+		src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript">
+ 		var = socket = null;
+		$(document).ready(function() {
+			socket = io.connect(); //서버에 접속 시도
+			socket.emit('article_list','');
+			socket.on('article_list',function(data){
+				data = JSON.parse(data);
+				for (var i =0 ; i < data.length ; i++) {
+					$('#article_list').append('<li>'+
+							'<a href="detail.html?no="'+data.no+'''>'+data.title)
+				}
+			});
+			
+			socket.on('article',function(data){
+				console.log(data);
+				
+				title = decodeURIComponent(data.title);
+				writer = decodeURIComponent(data.writer);
+				contents = decodeURIComponent(data.contents);
+				$('#no').append('<li>'+data.article.title+'</li>');
+
+			});
+		});
+	 
+	
+	
+	</script>
+</head>
+<body>
+	<h1>게시판 전체목록</h1>
+	<div>
+		<input type="text" id="message">
+		<br>
+
+		<button type="button" onclick="javascript:send();">저장</button>
+	</div>
+	<div>
+		<ul id="#artilcle_list">	</ul>
+	</div>
+	<button type="button" onclick="location.href='/write.html' ">글쓰기</button>
+</body>
+</html>

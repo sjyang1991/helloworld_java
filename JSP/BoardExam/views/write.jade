@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  form(method="POST" action="/write")
+    p 제목 :
+    input(type="text" name="title")
+    p 내용 :
+    input(type="text" name="contents")
+    p 글쓴이 :
+    input(type="text" name="writer")
+    p
+    input(type="submit" value="쓰기")
+    a(href="/index"): button(type="button" ) 취소

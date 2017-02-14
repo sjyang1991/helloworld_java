@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  - each board in boards
+  input(type="text" name="title" value="#{board.title}" size="5")
+  a(href="write"): button(type="button" ) 글쓰기
